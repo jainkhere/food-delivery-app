@@ -27,9 +27,15 @@
   color: white;
   border: 0;
   border-radius: 35px;
-  padding: 10px;
   outline: 0;
+  height: 35px;
+  width: 35px;
+  font-size: 20px;
+  text-align: center;
 }
 .item-add-remove.btn-disabled {
   background-color: rgba(98, 29, 5, 0.3);
+}
+.item-count {
+  font-size: 20px;
 }

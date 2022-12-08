@@ -5,7 +5,21 @@ import "./styles/Item.css";
 
 const Item = (props) => {
   const { itemName, add, remove, count = 0, disabled } = props;
-  return (
+  return disabled ? (
+    <div className="item-wrapper">
+      <div className="item-wrapper-row">
+        <div className="item-name">{itemName}</div>
+        <div className="item-remove-count-add">
+          <button type="button" className="item-add-remove" onClick={add}>
+            +
+          </button>
+        </div>
+      </div>
+      <div className="item-wrapper-row">
+        <div className="item-price">{"$" + INGREDIENT_PRICES[itemName]}</div>
+      </div>
+    </div>
+  ) : (
     <div className="item-wrapper">
       <div className="item-wrapper-row">
         <div className="item-name">{itemName}</div>
@@ -16,11 +30,11 @@ const Item = (props) => {
             onClick={remove}
             disabled={disabled}
           >
-            Remove
+            -
           </button>
-          {count}
+          <span className="item-count">{count}</span>
           <button type="button" className="item-add-remove" onClick={add}>
-            Add
+            +
           </button>
         </div>
       </div>
