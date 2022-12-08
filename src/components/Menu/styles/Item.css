@@ -1,0 +1,35 @@
+.item-wrapper {
+  align-items: center;
+  margin: 5px 0;
+}
+.item-wrapper-row {
+  display: flex;
+  margin: auto;
+}
+.item-name {
+  padding: 10px;
+  flex: auto;
+  font-weight: bold;
+  width: 80px;
+}
+.item-price {
+  margin-left: 1.5rem;
+  font-weight: 400;
+}
+.item-remove-count-add {
+  margin-right: 1rem;
+}
+.item-add-remove {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  background-color: #fa4a0c;
+  color: white;
+  border: 0;
+  border-radius: 35px;
+  padding: 10px;
+  outline: 0;
+}
+.item-add-remove.btn-disabled {
+  background-color: rgba(98, 29, 5, 0.3);
+}

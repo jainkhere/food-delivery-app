@@ -1,22 +1,21 @@
-import React, { Component, } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Aux from "../../../hoc/Aux_Comp";
 import Button from "../../UI/Button/Button";
 
 const orderSummary = (props) => {
-  const {
-    ingredients, modalClosed, purchaseContinue, totalPrice,
-  } = props;
-  const ingredientSummary = Object.keys(ingredients).map(key => (
-    <li key={key}>
-      <span style={{ textTransform: "capitalize", }}>{key}: </span>
-      {ingredients[key]}
-    </li>
-  ));
+  const { ingredients, modalClosed, purchaseContinue, totalPrice } = props;
+  const ingredientSummary = Object.entries(ingredients)
+    .filter(([key, value]) => value > 0)
+    .map((key) => (
+      <li key={key[0]}>
+        <span style={{ textTransform: "capitalize" }}>{key[0]}: </span>
+        {ingredients[key[0]]}
+      </li>
+    ));
   return (
     <Aux>
       <h3> Your order </h3>
-      <p>A delicious burger with the following ingredients</p>
       <ul>{ingredientSummary}</ul>
       <p>Continue to checkout?</p>
       <p>
