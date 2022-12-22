@@ -1,27 +1,37 @@
 import React from "react";
 import "./Toolbar.css";
-import PropTypes from "prop-types";
-import Logo from "../../Logo/Logo";
-import NavigationItems from "../NavigationItems/NavigationItems";
-import DrawerToggle from "../SideDrawer/DrawerToggle/DrawerToggle";
+import { FaHome, FaShoppingCart } from "react-icons/fa";
 
-const toolbar = (props) => {
-  const { toggleSideDrawer, } = props;
+const toolbar = () => {
+  const fullPath = window.location.href;
+  const parts = fullPath.split("/");
+  const path = parts[parts.length - 1];
+  const showHomeAndCartButton =
+    path === "home" || path === "menu" || path === "checkout";
+
+  const handleHomeButtonClick = () => {
+    window.location.href = "/home";
+  };
+
+  const handleCartButtonClick = () => {
+    window.location.href = "/checkout";
+  };
+
   return (
     <header className="toolbar">
-      <DrawerToggle click={toggleSideDrawer} />
-      <div className="logoToolbar">
-        <Logo />
-      </div>
-      <nav className="desktopOnly">
-        <NavigationItems />
-      </nav>
+      {showHomeAndCartButton && (
+        <div onClick={handleHomeButtonClick}>
+          <FaHome className="icon-home u-c-w" size={24} />
+        </div>
+      )}
+      <div className="u-fs-1_5 u-c-w">Food For Everyone</div>
+      {showHomeAndCartButton && (
+        <div onClick={handleCartButtonClick}>
+          <FaShoppingCart className="icon-cart u-c-w" size={24} />
+        </div>
+      )}
     </header>
   );
-};
-
-toolbar.propTypes = {
-  toggleSideDrawer: PropTypes.func.isRequired,
 };
 
 export default toolbar;

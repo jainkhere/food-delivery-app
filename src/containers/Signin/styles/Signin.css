@@ -1,0 +1,38 @@
+.signin-form {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.signin-form-button {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  background-color: white;
+  color: #fa4a0c;
+  font-family: inherit;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  border-radius: 30px;
+  width: 274px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.consumer-details-form-button {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  background-color: white;
+  color: #fa4a0c;
+  font-family: inherit;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  border-radius: 30px;
+  width: 274px;
+  height: 56px;
+}

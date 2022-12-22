@@ -1,0 +1,35 @@
+.getting-started-page {
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+  height: 100vh;
+  background-color: #fa4a0c;
+  /* justify-content: space-between; */
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.getting-started-page--title {
+  margin-top: 4rem;
+  margin-bottom: 8rem;
+  color: white;
+  font-size: 2rem;
+}
+
+.getting-started-page--button {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  background-color: white;
+  color: #fa4a0c;
+  font-family: inherit;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  border-radius: 30px;
+  width: 314px;
+  height: 70px;
+}

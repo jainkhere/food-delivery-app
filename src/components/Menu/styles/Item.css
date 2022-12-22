@@ -9,7 +9,7 @@
 .item-name {
   padding: 10px;
   flex: auto;
-  font-weight: bold;
+  font-weight: 500;
   width: 80px;
 }
 .item-price {
@@ -17,9 +17,19 @@
   font-weight: 400;
 }
 .item-remove-count-add {
-  margin-right: 1rem;
+  /* margin-right: 1rem; */
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 .item-add-remove {
+  font-size: 20px;
+  align-self: center;
+}
+.item-add-remove.btn-disabled {
+  background-color: rgba(98, 29, 5, 0.3);
+}
+.item-count {
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 5px;
@@ -32,10 +42,15 @@
   width: 35px;
   font-size: 20px;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
-.item-add-remove.btn-disabled {
-  background-color: rgba(98, 29, 5, 0.3);
+
+.count {
+  align-self: center;
+  text-align: center;
 }
-.item-count {
-  font-size: 20px;
+
+.u-d-n {
+  display: none;
 }

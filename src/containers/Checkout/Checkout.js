@@ -1,23 +1,26 @@
-import React, { Component, } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Route, } from "react-router-dom";
-import { connect, } from "react-redux";
+import { Route } from "react-router-dom";
+import { connect } from "react-redux";
 import CheckoutSummary from "../../components/Order/CheckoutSummary/CheckoutSummary";
 import ContactData from "./ContactData/ContactData";
 
 class Checkout extends Component {
   checkoutContinuedHandler = () => {
-    const { history, } = this.props;
+    const { history } = this.props;
     history.replace("/checkout/contact-data");
   };
 
   checkoutCancelledHandler = () => {
-    const { history, } = this.props;
+    const { history } = this.props;
     history.goBack();
   };
-
+  clickHandler = () => {
+    const { history } = this.props;
+    history.push("/home");
+  };
   render() {
-    const { match, ingredients, totalPrice, } = this.props;
+    const { ingredients } = this.props;
     return (
       <div>
         <CheckoutSummary
@@ -25,12 +28,12 @@ class Checkout extends Component {
           checkoutContinued={this.checkoutContinuedHandler}
           checkoutCancelled={this.checkoutCancelledHandler}
         />
-        <Route
-          path={`${match.path}/contact-data`}
-          render={() => (
-            <ContactData {...this.props} ingredients={ingredients} price={totalPrice} />
-          )}
-        />
+        <button
+          className="u-mt-0 restaurant-menu-button"
+          onClick={this.clickHandler}
+        >
+          Home
+        </button>
       </div>
     );
   }
@@ -43,7 +46,7 @@ Checkout.propTypes = {
   totalPrice: PropTypes.number.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   ingredients: state.ingre.ingredients,
   totalPrice: state.ingre.totalPrice,
 });

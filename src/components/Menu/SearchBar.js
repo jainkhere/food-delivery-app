@@ -5,7 +5,7 @@ import "./styles/SearchBar.css";
 const SearchBar = () => {
   /* eslint-disable */
   return (
-    <span class="search-bar-wrapper">
+    <div class="search-bar-wrapper">
       <input
         type="text"
         id="search-bar"
@@ -14,7 +14,7 @@ const SearchBar = () => {
         autocomplete="off"
       />
       <FaSearch className="icon-search" />
-    </span>
+    </div>
   );
   /* eslint-enable */
 };

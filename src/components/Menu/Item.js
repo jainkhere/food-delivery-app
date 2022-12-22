@@ -4,38 +4,38 @@ import { INGREDIENT_PRICES } from "../../store/reducers/ingredients";
 import "./styles/Item.css";
 
 const Item = (props) => {
-  const { itemName, add, remove, count = 0, disabled } = props;
-  return disabled ? (
+  const {
+    itemName,
+    add,
+    remove,
+    count = 0,
+    disabled,
+    allergen,
+    onAddButtonClick,
+  } = props;
+  return (
     <div className="item-wrapper">
       <div className="item-wrapper-row">
         <div className="item-name">{itemName}</div>
         <div className="item-remove-count-add">
-          <button type="button" className="item-add-remove" onClick={add}>
-            +
-          </button>
-        </div>
-      </div>
-      <div className="item-wrapper-row">
-        <div className="item-price">{"$" + INGREDIENT_PRICES[itemName]}</div>
-      </div>
-    </div>
-  ) : (
-    <div className="item-wrapper">
-      <div className="item-wrapper-row">
-        <div className="item-name">{itemName}</div>
-        <div className="item-remove-count-add">
-          <button
+          <span
             type="button"
-            className={`item-add-remove ${disabled ? "btn-disabled" : ""}`}
+            className={`item-add-remove ${disabled ? "u-d-n" : ""}`}
             onClick={remove}
             disabled={disabled}
           >
             -
-          </button>
-          <span className="item-count">{count}</span>
-          <button type="button" className="item-add-remove" onClick={add}>
+          </span>
+          <div className="item-count">
+            <span className="count">{count}</span>
+          </div>
+          <span
+            type="button"
+            className="item-add-remove"
+            onClick={!allergen ? add : onAddButtonClick}
+          >
             +
-          </button>
+          </span>
         </div>
       </div>
       <div className="item-wrapper-row">

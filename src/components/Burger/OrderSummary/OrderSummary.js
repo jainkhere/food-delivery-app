@@ -21,12 +21,20 @@ const orderSummary = (props) => {
       <p>
         <strong>Total price is: ${totalPrice.toFixed(2)}</strong>
       </p>
-      <Button click={modalClosed} btnType="danger">
-        CANCEL
-      </Button>
-      <Button btnType="success" click={purchaseContinue}>
-        CONTINUE
-      </Button>
+      <div className="u-d-f u-w-300 u-m-a">
+        <button
+          className="restaurant-menu-warning-modal-button u-mr-0_5"
+          onClick={modalClosed}
+        >
+          Cancel
+        </button>
+        <button
+          className="restaurant-menu-warning-modal-button u-ml-0_5"
+          onClick={purchaseContinue}
+        >
+          Place Order
+        </button>
+      </div>
     </Aux>
   );
 };

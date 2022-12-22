@@ -9,12 +9,9 @@ const ItemControls = (props) => {
     removeIngredient,
     ingredients,
     disabled,
-    // price,
-    // purchasable,
-    // order,
+    allergen,
+    onAddButtonClick,
   } = props;
-  console.log(ingredients);
-  console.log(ingredients.itemName);
   return (
     <div className="ItemControls">
       <Item
@@ -23,6 +20,8 @@ const ItemControls = (props) => {
         add={() => addIngredient(itemName)}
         remove={() => removeIngredient(itemName)}
         disabled={disabled[itemName]}
+        onAddButtonClick={onAddButtonClick}
+        allergen={allergen}
       />
     </div>
   );
@@ -33,9 +32,6 @@ ItemControls.propTypes = {
   addIngredient: PropTypes.func.isRequired,
   removeIngredient: PropTypes.func.isRequired,
   disabled: PropTypes.shape({}).isRequired,
-  //   price: PropTypes.number.isRequired,
-  //   purchasable: PropTypes.bool.isRequired,
-  //   order: PropTypes.func.isRequired,
 };
 
 export default ItemControls;
