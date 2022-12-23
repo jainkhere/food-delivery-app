@@ -1,8 +1,8 @@
 {
-  "name": "burger_app",
+  "name": "",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jainkhere.github.io/food-delivery-app/",
+  "homepage": "http://jainkhere.github.io/food-deivery-app",
   "dependencies": {
     "jest": "^23.5.0",
     "prop-types": "^15.6.2",
